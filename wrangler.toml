@@ -1,4 +1,4 @@
-name = "joannas page"
+name = "joes-page"
 main = "worker.js"
 compatibility_date = "2025-04-30"
 workers_dev = true
