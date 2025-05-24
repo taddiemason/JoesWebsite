@@ -289,8 +289,11 @@
       onChildAdded(commentsRef, snapshot => {
         const data = snapshot.val();
         const p = document.createElement('p');
-        p.innerHTML = `<strong>${data.name}:</strong> ${data.comment}`;
+        const date = new Date(data.timestamp);
+        const formattedDate = date.toLocaleString(); // e.g., "5/24/2025, 4:30:12 PM"
+        p.innerHTML = `<strong>${data.name}</strong> <em>(${formattedDate})</em><br>${data.comment}`;
         commentList.appendChild(p);
+
 
         const placeholder = commentList.querySelector('p');
         if (placeholder && placeholder.textContent.includes('No comments yet')) {
