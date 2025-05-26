@@ -375,18 +375,21 @@
   <p>Still me. Still becoming.</p>
   <p>—Joanna</p>
 
-  <section class="comments">
+    <section class="comments">
     <h3>Comments</h3>
-    <form id="comment-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" required>
-      <label for="comment">Comment:</label>
-      <textarea id="comment" rows="4" required></textarea>
+    <form class="comment-form">
+      <label>Name:</label><br />
+      <input type="text" name="name" required /><br /><br />
+      <label>Comment:</label><br />
+      <textarea name="comment" rows="4" required></textarea><br /><br />
       <button type="submit">Post Comment</button>
     </form>
-    <div id="comment-list"></div>
+    <div class="comment-list">
+      <p>No comments yet. Be the first to comment!</p>
+    </div>
   </section>
 </article>
+<article>
 
 
 
