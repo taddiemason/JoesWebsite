@@ -1,7 +1,7 @@
 export default {
   async fetch(request, env, ctx) {
     try {
-      const response = await fetch("https://raw.githubusercontent.com/taddiemason/JoesWebsite/main/index.html");
+      const response = await fetch("https://raw.githubusercontent.com/taddiemason/JoesWebsite/main/takedown.html");
 
       if (!response.ok) {
         return new Response("Failed to fetch HTML content.", { status: 500 });
