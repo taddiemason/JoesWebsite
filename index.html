@@ -598,5 +598,26 @@
       });
     });
   </script>
+  <script>
+  // Sort articles by date (newest first)
+  document.addEventListener('DOMContentLoaded', () => {
+    const main = document.querySelector('main');
+    const articles = Array.from(main.querySelectorAll('article'));
+
+    const parseDate = text => {
+      const dateMatch = text.match(/([A-Za-z]+ \d{1,2}, \d{4})/);
+      return dateMatch ? new Date(dateMatch[1]) : new Date(0); // fallback to 1970 if invalid
+    };
+
+    articles.sort((a, b) => {
+      const dateA = parseDate(a.querySelector('em').textContent);
+      const dateB = parseDate(b.querySelector('em').textContent);
+      return dateB - dateA; // newest to oldest
+    });
+
+    // Remove and re-append in sorted order
+    articles.forEach(article => main.appendChild(article));
+  });
+</script>
 </body>
 </html>
