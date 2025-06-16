@@ -3,13 +3,13 @@ export default {
     try {
       const githubUrl = "https://raw.githubusercontent.com/taddiemason/JoesWebsite/main/index.html";
 
-      const response = await fetch(githubUrl);
+      const githubResponse = await fetch(githubUrl);
 
-      if (!response.ok) {
-        return new Response("Failed to fetch HTML content.", { status: 500 });
+      if (!githubResponse.ok) {
+        return new Response("Failed to fetch HTML content from GitHub.", { status: 502 });
       }
 
-      const html = await response.text();
+      const html = await githubResponse.text();
 
       return new Response(html, {
         status: 200,
@@ -19,7 +19,7 @@ export default {
         }
       });
     } catch (error) {
-      return new Response(`Error: ${error.message}`, { status: 500 });
+      return new Response(`Unexpected error: ${error.message}`, { status: 500 });
     }
   }
 }
