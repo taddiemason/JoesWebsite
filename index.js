@@ -1,7 +1,7 @@
 export default {
   async fetch(request, env, ctx) {
     try {
-      const githubUrl = "https://raw.githubusercontent.com/taddiemason/JoesWebsite/main/takedown.html";
+      const githubUrl = "https://raw.githubusercontent.com/taddiemason/JoesWebsite/main/index.html";
 
       const response = await fetch(githubUrl);
 
